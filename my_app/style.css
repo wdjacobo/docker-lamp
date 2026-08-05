@@ -1,0 +1,9 @@
+body{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: #e4e4e4;
+    color: #5a75e2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
