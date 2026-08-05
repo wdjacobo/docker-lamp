@@ -1,0 +1,25 @@
+version: 5.3.1
+services:
+  web:
+    image: php:8.5-apache
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    volumes:
+      - ./app:/var/www/html
+  db:
+    image: mysql:9.7
+    environment:
+      MYSQL_ROOT_PASSWORD: change_password
+      MYSQL_DATABASE: change_database_name
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin:5.2
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
