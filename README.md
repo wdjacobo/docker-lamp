@@ -3,6 +3,7 @@
 This is a small, PHP Docker stack environment for web app development. It can be used as a lightweight and clean alternative to complete development environments or LAMP solution stack software as XAMPP or AMPPS.
 
 >[!WARNING] Keep in Mind
+>
 > This project is designed to help with learning web development using Docker and is not intended for production use. Moreover, used versions are not dynamic: the project uses the latest stable minor versions of PHP, MySQL and PHPMyAdmin as at 5 August, 2026.
 
 ---
