@@ -7,14 +7,16 @@ services:
     depends_on:
       - db
     volumes:
-      - ./app:/var/www/html
+      - ./my_app:/var/www/html
   db:
     image: mysql:9.7
     environment:
-      MYSQL_ROOT_PASSWORD: change_password
-      MYSQL_DATABASE: change_database_name
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - ./mysql_data:/var/lib/mysql
+      - ./my_mysql_data:/var/lib/mysql
   phpmyadmin:
     image: phpmyadmin:5.2
     ports:
