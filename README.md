@@ -54,6 +54,7 @@ This is a basic environment: possibilies for improvement and customisation are c
 - Change default environment variables and add your own.
 - Add more containers, e.g., [composer](https://hub.docker.com/_/composer).
 - Add container names to the containers in `compose.yaml` file using `container_name: <my_container_name>`.
+- Install PHP extensions, see official Docker image for PHP [How to install more PHP extensions](https://hub.docker.com/_/php#how-to-install-more-php-extensions) section.
 
 ---
 
@@ -63,3 +64,7 @@ The following links will lead you to the sources I used as the main references:
 
 - [docker-compose-lamp](https://github.com/sprintcube/docker-compose-lamp) - A much more elaborate and customizable project to keep in mind
 - [How to set up a simple LAMP server with DOCKER in 3 minutes](https://medium.com/@mikez_dg/how-to-set-up-a-simple-lamp-server-with-docker-images-in-2023-9b0e24476ec6) - An easy follow along tutorial to build something similar to this repository
+
+Also, you can check Docker specific guide for containerize PHP applications:
+
+- [PHP language-specific guide](https://docs.docker.com/guides/php)
