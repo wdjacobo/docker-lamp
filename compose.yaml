@@ -1,12 +1,14 @@
 services:
-  web:
+  app:
     image: php:8.5-apache
     ports:
       - "80:80"
     depends_on:
       - db
     volumes:
-      - ./my_app:/var/www/html
+      - app_data:/var/www/html
+    networks:
+      - appnet 
   db:
     image: mysql:9.7
     ports:
@@ -17,8 +19,11 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - my_mysql_data:/var/lib/mysql
-  phpmyadmin:
+      - db_data:/var/lib/mysql
+    networks:
+      - appnet 
+      - dbadminnet
+  dbadmin:
     image: phpmyadmin:5.2
     ports:
       - "8080:80"
@@ -26,5 +31,16 @@ services:
       - db
     environment:
       PMA_HOST: db
+    networks:
+      - dbadminnet
 volumes:
-  my_mysql_data:
+  db_data:
+  app_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./app
+      o: bind
+networks:
+  appnet:
+  dbadminnet:
