@@ -36,13 +36,15 @@ You can check the installation by running `git -v`, `docker -v` and `docker-comp
 
 ## Accessing to the server and the database
 
-If everything has gone smoothly, the server would be accesible navigating to [`http://localhost:80`](http://localhost:80) through a web browser.
+If everything has gone smoothly, the server would be accesible navigating to [`http://localhost:80`](http://localhost:80) through a web browser. This is the aspect of the default app:
+
+![A browser window showing a text that says "Placeholder app" and gives basic instructions on how to replace it with another app](screenshots/localhost-80-aspect.png)
 
 Also, database management can be done using the PHPMyAdmin software, accesible at [`http://localhost:8080`](http://localhost:8080), or connecting to the database with a client as MySQLWorkbench or DBeaver, through the `3306` port.
 
 ## Using the environment for web development
 
-First of all, stop the containers by running `docker compose down` in the cloned repository directory. Then, simply replace the files inside `my_app` folder with your own `.php`, `.html`, `.css` or `.js` files. Run the containers again (remember: `docker compose up -d`) to see your own app runing at [`http://localhost:80`](http://localhost:80).
+First of all, stop the containers by running `docker compose down` in the cloned repository directory. Then, simply replace the files inside `app` folder with your own `.php`, `.html`, `.css` or `.js` files. Run the containers again (remember: `docker compose up -d`) to see your own app runing at [`http://localhost:80`](http://localhost:80).
 
 ## Customising this environment
 
@@ -51,7 +53,7 @@ This is a basic environment: possibilies for improvement and customisation are c
 - Change default used ports. The default ports I established may be in use by other processes in your machine.
 - Change default environment variables and add your own.
 - Add more containers, e.g., [composer](https://hub.docker.com/_/composer).
-- Add container names to the `docker-compose.yaml` file using `container_name: <my_container_name>` for each service.
+- Add container names to the containers in `compose.yaml` file using `container_name: <my_container_name>`.
 
 ---
 
